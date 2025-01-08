@@ -1,20 +1,22 @@
+import Link from "next/link";
+
 const Page = () => {
   return (
     <>
-      <h1 className="text-purple-800">Contact</h1>
-      <p>
+      <h1 className="text-customBlue text-3xl">Contact</h1>
+      <p className={"mb-4"}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, architecto
         natus, cumque laborum, error consequuntur eaque expedita numquam eveniet
         quas sunt possimus eligendi minus omnis sapiente sequi cum magni
         distinctio?
       </p>
       <div>
-        <h3 className="text-purple-600">Get in Touch</h3>
-        <ul style={{ listStyleType: "square" }}>
+        <h3 className="text-customBlue text-2xl">Get in Touch</h3>
+        <ul style={{ listStyle: "none" }}>
           <li>
             <span>
               Email:{" "}
-              <a href="mailto:contact@example.com">contact@example.com</a>
+              <Link href="mailto:contact@example.com">contact@example.com</Link>
             </span>
           </li>
           <li>

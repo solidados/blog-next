@@ -7,7 +7,7 @@ type PostProps = Post;
 const Post: FC<PostProps> = ({ id, title, content, date }) => {
   return (
     <div key={id} className={"border border-gray-200 my-4 p-4"}>
-      <Link href={`/blog/post/${id}`}>
+      <Link href={`/blog/post/${id}`} className={"hover:text-customBlue"}>
         <h2>{title}</h2>
         <p className="text-grey-500">{date}</p>
         <p>{content}</p>

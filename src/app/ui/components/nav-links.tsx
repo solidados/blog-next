@@ -15,12 +15,8 @@ import clsx from "clsx";
 
 const links = [
   { name: "Home", href: "/", icon: HomeIcon },
-  {
-    name: "Posts",
-    href: "/blog/posts",
-    icon: DocumentDuplicateIcon,
-  },
   { name: "About", href: "/blog/about", icon: UserGroupIcon },
+  { name: "Posts", href: "/blog/posts", icon: DocumentDuplicateIcon },
   { name: "Contact", href: "/blog/contact", icon: EnvelopeIcon },
 ];
 
@@ -30,17 +26,17 @@ export default function NavLinks() {
     <>
       {links.map((link) => {
         const LinkIcon = link.icon;
+        const isActive = pathname === link.href;
+
         return (
           <Link
             key={link.name}
             href={link.href}
             className={clsx(
-              "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-customBlue" +
-                " hover:text-white" +
-                " md:flex-none md:justify-start md:p-2 md:px-3",
+              "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3",
               {
-                "bg-customBlue": pathname === link.href,
-                "text-white": pathname === link.href,
+                "bg-customBlue text-white": isActive,
+                "bg-gray-50 hover:bg-customBlue hover:text-white": !isActive,
               },
             )}
           >
