@@ -1,14 +1,12 @@
 import { posts } from "@/app/lib/placeholder-data";
 import Post from "@/app/ui/components/posts/Post";
 
-type PageProps = {
-  params: { id: string };
-};
+export async function generateStaticParams() {
+  return posts.map((post) => ({ id: post.id }));
+}
 
-const Page = ({ params }: PageProps) => {
-  const post: Post | undefined = posts.find(
-    (post: Post): boolean => post.id === params.id,
-  );
+const Page = ({ params }: { params: { id: string } }) => {
+  const post = posts.find((post): boolean => post.id === params.id);
 
   return (
     <>
@@ -17,11 +15,5 @@ const Page = ({ params }: PageProps) => {
     </>
   );
 };
-
-// export async function generateStaticParams() {
-//   return posts.map((post) => ({
-//     id: post.id,
-//   }));
-// }
 
 export default Page;
