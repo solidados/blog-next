@@ -18,10 +18,10 @@ const Page = ({ params }: PageProps) => {
   );
 };
 
-export async function generateStaticParams() {
-  return posts.map((post) => ({
-    id: post.id,
-  }));
-}
+// export async function generateStaticParams() {
+//   return posts.map((post) => ({
+//     id: post.id,
+//   }));
+// }
 
 export default Page;
